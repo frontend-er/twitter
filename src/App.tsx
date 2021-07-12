@@ -1,17 +1,21 @@
 import React from 'react';
-import Button from '@material-ui/core/Button';
-import SingIn from './Pages/Home/SingIn';
-import { ThemeProvider } from '@material-ui/core/styles';
-import { theme } from "./theme";
+import { SingIn } from './Pages/Home/SingIn'
+import { Switch, Route } from 'react-router-dom';
+import Home from "./Pages/Home/Home";
+
 
 function App() {
   return (
     <div className="App">
-      <ThemeProvider theme={theme}>
-        <SingIn />
-      </ThemeProvider>
+
+      <Switch>
+        <Route path='/singin' component={SingIn} />
+        <Route path='/' component={Home} />
+
+      </Switch>
     </div>
   );
 }
+
 
 export default App;

@@ -7,7 +7,8 @@ import MessageIcon from '@material-ui/icons/ModeCommentOutlined';
 import FormGroup from '@material-ui/core/FormGroup';
 import FormControl from '@material-ui/core/FormControl';
 import TextField from '@material-ui/core/TextField';
-import { ModalBlock } from '../../components/ModalBlock';
+import { ModalBlock } from "./../../components/ModalBlock";
+
 
 
 
@@ -83,7 +84,8 @@ export const useStylesSignIn = makeStyles((theme) => ({
    },
 }));
 
-function SignIn() {
+
+export const SingIn: React.FC = (): React.ReactElement => {
    const classes = useStylesSignIn();
    const [visibleModal, setVisibleModal] = React.useState<'signIn' | 'signUp'>();
 
@@ -236,5 +238,3 @@ function SignIn() {
       </div>
    );
 }
-
-export default SignIn;
