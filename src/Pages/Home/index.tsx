@@ -19,6 +19,9 @@ import ListItemText from '@material-ui/core/ListItemText/ListItemText';
 import List from '@material-ui/core/List/List';
 import Button from '@material-ui/core/Button/Button';
 import { useHomeStyles } from './theme';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchTweets } from '../../store/ducks/tweets/dist/actionCreators';
+import { selectTweetsItems } from "./../../store/ducks/tweets/selectors";
 
 
 //Список дел 
@@ -47,6 +50,19 @@ const SearchTextField = withStyles(() =>
 function Home() {
 
    const classes = useHomeStyles();
+   const dispatch = useDispatch();
+
+   const tweets = useSelector(selectTweetsItems);
+
+
+
+
+   React.useEffect(() => {
+      dispatch(fetchTweets())
+   }, []);
+
+
+
 
    return (
       <Container className={classes.wrapper} maxWidth="lg">
@@ -69,14 +85,11 @@ function Home() {
                      <div className={classes.addFormBottomLine} />
                   </Paper>
                   {
-                     [...new Array(12).fill(<Tweet text="Много коментов про верстку, хочу поддержать автора. Одно такое видео должно быть точно, потому что понятно хотя бы как целиком проект делается. Например я вообще не начинающий и вообще не фронтендер, а бекендер, которому надо это изучить, и это оказалось удобно в формате видео. Именно так я и собирался делать, брать готовую либу компонентов и собирать из конструктора, верстать руками я естественно не буду. И лично мне полезно было поглядеть."
-                        user={{
-                           fullName: '@killwolf',
-                           userName: '@killwolf',
-                           avatarUrl: "https://images.unsplash.com/photo-1548142813-c348350df52b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDl8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=500&q=60",
-                        }}
-                        classes={classes}
-                     />
+                     [tweets.map(tweet =>
+                        < Tweet key={tweet._id} text={tweet.text}
+                           user={tweet.user}
+                           classes={classes}
+                        />
                      )]
                   }
                </Paper>
