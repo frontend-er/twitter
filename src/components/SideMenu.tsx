@@ -10,8 +10,8 @@ import PersonOutlineIcon from '@material-ui/icons/PersonOutline';
 import Typography from '@material-ui/core/Typography';
 import { IconButton } from '@material-ui/core';
 import { Button } from '@material-ui/core';
-
-
+import Hidden from '@material-ui/core/Hidden';
+import CreateIcon from '@material-ui/icons/Create';
 interface SideMenuProps {
    classes: ReturnType<typeof useHomeStyles>
 }
@@ -30,7 +30,12 @@ export const SideMenu: React.FC<SideMenuProps> = ({ classes }: SideMenuProps): R
          <li className={classes.sideMenuItem}>
             <div>
                <SearchIcon className={classes.sideMenuListItemIcon} />
-               <Typography className={classes.sideMenuListLabel} variant="h6">Поиск </Typography>
+               <Hidden smDown>
+                  <Typography className={classes.sideMenuListLabel} variant="h6">
+                     Поиск
+                  </Typography>
+               </Hidden>
+
 
             </div>
 
@@ -38,7 +43,11 @@ export const SideMenu: React.FC<SideMenuProps> = ({ classes }: SideMenuProps): R
          <li className={classes.sideMenuItem}>
             <div>
                <NotificationsIcon className={classes.sideMenuListItemIcon} />
-               <Typography className={classes.sideMenuListLabel} variant="h6">Уведомления </Typography>
+               <Hidden smDown>
+
+                  <Typography className={classes.sideMenuListLabel} variant="h6">Уведомления </Typography>
+               </Hidden>
+
             </div>
 
          </li>
@@ -46,7 +55,11 @@ export const SideMenu: React.FC<SideMenuProps> = ({ classes }: SideMenuProps): R
 
             <div>
                <MailOutlineIcon className={classes.sideMenuListItemIcon} />
-               <Typography className={classes.sideMenuListLabel} variant="h6">Сообщения </Typography>
+               <Hidden smDown>
+
+                  <Typography className={classes.sideMenuListLabel} variant="h6">Сообщения </Typography>
+               </Hidden>
+
             </div>
 
          </li>
@@ -54,27 +67,43 @@ export const SideMenu: React.FC<SideMenuProps> = ({ classes }: SideMenuProps): R
 
             <div>
                <BookmarkBorderIcon className={classes.sideMenuListItemIcon} />
-               <Typography className={classes.sideMenuListLabel} variant="h6">Закладки </Typography>
+               <Hidden smDown>
+
+                  <Typography className={classes.sideMenuListLabel} variant="h6">Закладки </Typography>
+               </Hidden>
+
             </div>
          </li>
          <li className={classes.sideMenuItem}>
 
             <div>
                <ListAltIcon className={classes.sideMenuListItemIcon} />
-               <Typography className={classes.sideMenuListLabel} variant="h6">Список </Typography>
+               <Hidden smDown>
+
+                  <Typography className={classes.sideMenuListLabel} variant="h6">Список </Typography>
+               </Hidden>
+
             </div>
 
          </li>
          <li className={classes.sideMenuItem} >
             <div>
                <PersonOutlineIcon className={classes.sideMenuListItemIcon} />
-               <Typography className={classes.sideMenuListLabel} variant="h6">Профиль </Typography>
+               <Hidden smDown>
+
+                  <Typography className={classes.sideMenuListLabel} variant="h6">Профиль </Typography>
+               </Hidden>
+
             </div>
          </li>
 
          <li className={classes.sideMenuItem}>
-            <Button className={classes.sideMenuTweetButton} variant="contained" fullWidth color="primary">
-               Твитнуть
+            <Button className={classes.sideMenuTweetButton} variant="contained" color="primary">
+               <Hidden smDown>Твитнуть</Hidden>
+               <Hidden mdUp>
+                  <CreateIcon />
+               </Hidden>
+
             </Button>
          </li>
       </ul>
