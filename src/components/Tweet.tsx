@@ -7,7 +7,8 @@ import classNames from 'classnames';
 import { IconButton, Typography } from "@material-ui/core";
 import Avatar from '@material-ui/core/Avatar';
 import Paper from '@material-ui/core/Paper';
-import { useHomeStyles } from "../Pages/Home/Home";
+import { useHomeStyles } from "./../Pages/Home/theme";
+
 
 
 

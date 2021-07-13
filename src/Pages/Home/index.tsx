@@ -1,16 +1,12 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography'
-import { createStyles, InputBase, makeStyles, withStyles } from '@material-ui/core';
-import Container from '@material-ui/core/Container';
+import { Container, createStyles, InputBase, makeStyles, withStyles } from '@material-ui/core';
 import grey from '@material-ui/core/colors/grey';
 import Paper from '@material-ui/core/Paper';
 import { Tweet } from "../../components/Tweet";
-import { Theme } from '@material-ui/core';
 import { SideMenu } from '../../components/SideMenu';
-import { AddTweetForm } from "./../../components/AddTweetForm";
-import { InputAdornment } from '@material-ui/core';
-import SearchIcon from '@material-ui/icons/SearchOutlined';
+import { AddTweetForm } from "../../components/AddTweetForm";
 import PersonAddIcon from '@material-ui/icons/PersonAddOutlined';
 
 
@@ -22,6 +18,7 @@ import Avatar from '@material-ui/core/Avatar/Avatar';
 import ListItemText from '@material-ui/core/ListItemText/ListItemText';
 import List from '@material-ui/core/List/List';
 import Button from '@material-ui/core/Button/Button';
+import { useHomeStyles } from './theme';
 
 
 //Список дел 
@@ -31,207 +28,6 @@ import Button from '@material-ui/core/Button/Button';
 //  Сделать правую часть твитера 
 // Пооробывать выровнить отступы 
 
-
-
-export const useHomeStyles = makeStyles((theme: Theme) => ({
-
-
-
-   wrapper: {
-      height: "100vh"
-   },
-   sideMenuList: {
-      position: "sticky",
-      top: 10,
-      listStyle: "none",
-      padding: 0,
-      margin: 0,
-      width: 230,
-
-   },
-   logo: {
-      margin: "10px 0px"
-   },
-
-   logoIcon: {
-      fontSize: 36
-   },
-
-   sideMenuItem: {
-
-      marginTop: 10,
-      cursor: 'pointer',
-      "&:hover": {
-         "& div": {
-            backgroundColor: 'rgb(29, 161, 242, 0.1)',
-
-         },
-         "& h6": {
-            color: theme.palette.primary.main,
-         },
-         "& svg path": {
-            fill: theme.palette.primary.main,
-         },
-
-      },
-
-
-      "& div": {
-         display: "inline-flex",
-         alignItems: "center",
-         position: 'relative',
-         left: -10,
-         padding: ' 0 25px 0 20px',
-         borderRadius: 30,
-         height: 47,
-         margin: 4,
-         transition: 'all 0.2s ease-in-out'
-
-      },
-
-   },
-   sideMenuListLabel: {
-      fontWeight: 700,
-      fontSize: 20,
-      padding: 5,
-      marginLeft: 10
-   },
-   sideMenuListItemIcon: {
-      fontSize: 35,
-      marginLeft: -5,
-   },
-   tweetsWraper: {
-      borderRadius: 0,
-      height: '100%',
-      borderTop: 0,
-      borderBottom: 0
-   },
-   tweetsCentred: {
-      marginTop: 50,
-      textAlign: 'center',
-   },
-
-
-   tweet: {
-      display: 'flex',
-      cursor: 'pointer',
-      "&:hover": {
-         backgroundColor: 'rgb(245, 248, 250)',
-      }
-   },
-   tweetAvatar: {
-      width: theme.spacing(6.5),
-      height: theme.spacing(6.5),
-      marginRight: 15,
-
-   },
-   tweetsHeader: {
-      borderLeft: 0,
-      borderRight: 0,
-      borderTop: 0,
-      borderRadius: 0,
-      padding: 10,
-      '& h5': {
-         fontWeight: 900
-      },
-
-   },
-
-   tweetUserName: {
-      color: grey[500],
-   },
-
-   tweetFooter: {
-      display: "flex",
-      justifyContent: 'space-between',
-      width: 450
-   },
-
-   sideMenuTweetButton: {
-      marginTop: 25,
-      padding: theme.spacing(3),
-   },
-   rightSide: {
-      paddingTop: 20,
-      position: 'sticky',
-      top: 0,
-   },
-   rightSideBlock: {
-      backgroundColor: '#F5F8FA',
-      borderRadius: 15,
-      marginTop: 20,
-      '& .MuiList-root': {
-         paddingTop: 0,
-      },
-   },
-   rightSideBlockHeader: {
-      borderTop: 0,
-      borderLeft: 0,
-      borderRight: 0,
-      backgroundColor: 'transparent',
-      padding: '13px 18px',
-      '& b': {
-         fontSize: 20,
-         fontWeight: 800,
-      },
-   },
-   rightSideBlockItem: {
-      cursor: 'pointer',
-      '& .MuiTypography-body1': {
-         fontWeight: 700,
-      },
-      '& .MuiListItemAvatar-root': {
-         minWidth: 50,
-      },
-      '& .MuiListItemText-root': {
-         margin: 0,
-      },
-      '&:hover': {
-         backgroundColor: '#edf3f6',
-      },
-   },
-   addForm: {
-      padding: 20,
-   },
-   addFormBody: {
-      display: 'flex',
-      width: '100%',
-   },
-   addFormBottom: {
-      display: 'flex',
-      justifyContent: 'space-between',
-      alignItems: 'center',
-   },
-   addFormBottomActions: {
-      marginTop: 10,
-      paddingLeft: 70,
-   },
-   addFormTextarea: {
-      width: '100%',
-      border: 0,
-      fontSize: 20,
-      outline: 'none',
-      fontFamily: 'inherit',
-      resize: 'none',
-   },
-   addFormBottomLine: {
-      height: 12,
-      backgroundColor: '#E6ECF0',
-   },
-   addFormCircleProgress: {
-      position: 'relative',
-      width: 20,
-      height: 20,
-      margin: '0 10px',
-      '& .MuiCircularProgress-root': {
-         position: 'absolute',
-      },
-   },
-   addFormBottomRight: {
-      display: 'flex',
-      alignItems: 'center',
-   },
-}));
 
 
 
@@ -342,7 +138,7 @@ function Home() {
                            <ListItemAvatar>
                               <Avatar
                                  alt="Remy Sharp"
-                                 src="https://pbs.twimg.com/profile_images/1267938486566428673/US6KRPbA_normal.jpg"
+                                 src="https://sun9-29.userapi.com/impg/c854528/v854528533/2508be/Y5A0kBFbZS4.jpg?size=750x752&quality=96&sign=9d2e218b948349d2898fd071faf19c29&type=album"
                               />
                            </ListItemAvatar>
                            <ListItemText

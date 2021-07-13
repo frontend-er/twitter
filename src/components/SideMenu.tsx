@@ -1,5 +1,4 @@
 import React from 'react';
-import { useHomeStyles } from "./../Pages/Home/Home";
 import TwitterIcon from '@material-ui/icons/Twitter';
 import SearchIcon from '@material-ui/icons/Search';
 import NotificationsIcon from '@material-ui/icons/Notifications';
@@ -12,12 +11,27 @@ import { IconButton } from '@material-ui/core';
 import { Button } from '@material-ui/core';
 import Hidden from '@material-ui/core/Hidden';
 import CreateIcon from '@material-ui/icons/Create';
+import { useHomeStyles } from "./../Pages/Home/theme";
+import { ModalBlock } from './ModalBlock';
+import { AddTweetForm } from "./AddTweetForm";
+
 interface SideMenuProps {
    classes: ReturnType<typeof useHomeStyles>
 }
 
 
 export const SideMenu: React.FC<SideMenuProps> = ({ classes }: SideMenuProps): React.ReactElement => {
+
+   const [visibleAddTweet, setSetVisibleAddTweet] = React.useState<boolean>(false);
+
+   const handleClickOpenAddTweet = () => {
+      setSetVisibleAddTweet(true)
+   }
+
+   const onCloseAddTweet = () => {
+      setSetVisibleAddTweet(false);
+   }
+
    return (
 
       <ul className={classes.sideMenuList}>
@@ -98,13 +112,23 @@ export const SideMenu: React.FC<SideMenuProps> = ({ classes }: SideMenuProps): R
          </li>
 
          <li className={classes.sideMenuItem}>
-            <Button className={classes.sideMenuTweetButton} variant="contained" color="primary">
+            <Button onClick={handleClickOpenAddTweet} className={classes.sideMenuTweetButton} variant="contained" color="primary">
                <Hidden smDown>Твитнуть</Hidden>
                <Hidden mdUp>
                   <CreateIcon />
                </Hidden>
 
             </Button>
+
+
+            <ModalBlock onClose={onCloseAddTweet} visible={visibleAddTweet} title="" >
+
+               <div style={{ width: 550 }}>
+                  <AddTweetForm maxRows={15} classes={classes} />
+
+               </div>
+
+            </ModalBlock>
          </li>
       </ul>
    );
