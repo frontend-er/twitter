@@ -14,6 +14,7 @@ import CreateIcon from '@material-ui/icons/Create';
 import { useHomeStyles } from "./../Pages/Home/theme";
 import { ModalBlock } from './ModalBlock';
 import { AddTweetForm } from "./AddTweetForm";
+import { Link } from "react-router-dom";
 
 interface SideMenuProps {
    classes: ReturnType<typeof useHomeStyles>
@@ -36,10 +37,12 @@ export const SideMenu: React.FC<SideMenuProps> = ({ classes }: SideMenuProps): R
 
       <ul className={classes.sideMenuList}>
          <li className={classes.sideMenuItem}>
-            <IconButton>
-               <TwitterIcon className={classes.logoIcon} color="primary" />
+            <Link to="/home">
+               <IconButton>
+                  <TwitterIcon className={classes.logoIcon} color="primary" />
 
-            </IconButton>
+               </IconButton>
+            </Link>
          </li>
          <li className={classes.sideMenuItem}>
             <div>

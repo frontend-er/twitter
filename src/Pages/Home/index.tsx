@@ -8,7 +8,7 @@ import { SideMenu } from '../../components/SideMenu';
 import { AddTweetForm } from "../../components/AddTweetForm";
 import PersonAddIcon from '@material-ui/icons/PersonAddOutlined';
 import CircularProgress from '@material-ui/core/CircularProgress';
-
+import { Route } from "react-router-dom";
 
 import ListItem from '@material-ui/core/ListItem/ListItem';
 import Divider from '@material-ui/core/Divider/Divider';
@@ -21,6 +21,8 @@ import { useHomeStyles } from './theme';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchTweets } from '../../store/ducks/tweets/dist/actionCreators';
 import { selectIsTweetsLoading, selectTweetsItems } from "./../../store/ducks/tweets/selectors";
+import { fetchTags } from '../../store/tags/actionCreators';
+import { Tags } from '../../components/Tags';
 
 
 //Список дел 
@@ -60,6 +62,8 @@ function Home() {
 
    React.useEffect(() => {
       dispatch(fetchTweets())
+      dispatch(fetchTags())
+
    }, [dispatch]);
 
 
@@ -68,11 +72,11 @@ function Home() {
    return (
       <Container className={classes.wrapper} maxWidth="lg">
          <Grid container spacing={3}>
-            <Grid item xs={3}>
+            <Grid item sm={1} md={3}>
                <SideMenu classes={classes} />
 
             </Grid>
-            <Grid item xs={6}>
+            <Grid item sm={8} md={6}>
                <Paper className={classes.tweetsWraper} variant="outlined" >
                   <Paper className={classes.tweetsHeader} variant="outlined" >
                      <Typography variant="h5" > Главная</Typography>
@@ -85,17 +89,19 @@ function Home() {
                      </div>
                      <div className={classes.addFormBottomLine} />
                   </Paper>
-                  {isLoading ? <div className={classes.tweetsCentred}><CircularProgress /></div> :
-                     tweets.map(tweet =>
-                        < Tweet key={tweet._id} text={tweet.text}
-                           user={tweet.user}
-                           classes={classes}
-                        />
-                     )
-                  }
+                  <Route path="/home" exact >
+                     {isLoading ? <div className={classes.tweetsCentred}><CircularProgress /></div> :
+                        tweets.map(tweet =>
+                           < Tweet key={tweet._id} text={tweet.text}
+                              user={tweet.user}
+                              classes={classes}
+                           />
+                        )
+                     }
+                  </Route>
                </Paper>
             </Grid>
-            <Grid item xs={3}>
+            <Grid item sm={3} md={3}>
                <div className={classes.rightSide}>
                   <SearchTextField
 
@@ -103,46 +109,7 @@ function Home() {
 
                      fullWidth
                   />
-                  <Paper className={classes.rightSideBlock}>
-                     <Paper className={classes.rightSideBlockHeader} variant="outlined">
-                        <b>Актуальные темы</b>
-                     </Paper>
-                     <List>
-                        <ListItem className={classes.rightSideBlockItem}>
-                           <ListItemText
-                              primary="Санкт-Петербург"
-                              secondary={
-                                 <Typography component="span" variant="body2" color="textSecondary">
-                                    Твитов: 3 331
-                                 </Typography>
-                              }
-                           />
-                        </ListItem>
-                        <Divider component="li" />
-                        <ListItem className={classes.rightSideBlockItem}>
-                           <ListItemText
-                              primary="#коронавирус"
-                              secondary={
-                                 <Typography component="span" variant="body2" color="textSecondary">
-                                    Твитов: 163 122
-                                 </Typography>
-                              }
-                           />
-                        </ListItem>
-                        <Divider component="li" />
-                        <ListItem className={classes.rightSideBlockItem}>
-                           <ListItemText
-                              primary="Беларусь"
-                              secondary={
-                                 <Typography component="span" variant="body2" color="textSecondary">
-                                    Твитов: 13 554
-                                 </Typography>
-                              }
-                           />
-                        </ListItem>
-                        <Divider component="li" />
-                     </List>
-                  </Paper>
+                  <Tags classes={classes} />
                   <Paper className={classes.rightSideBlock}>
                      <Paper className={classes.rightSideBlockHeader} variant="outlined">
                         <b>Кого читать</b>
