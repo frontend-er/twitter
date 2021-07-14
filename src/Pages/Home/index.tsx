@@ -1,14 +1,13 @@
 import React from 'react';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography'
-import { Container, createStyles, InputBase, makeStyles, withStyles } from '@material-ui/core';
-import grey from '@material-ui/core/colors/grey';
+import { Container, createStyles, InputBase, withStyles } from '@material-ui/core';
 import Paper from '@material-ui/core/Paper';
 import { Tweet } from "../../components/Tweet";
 import { SideMenu } from '../../components/SideMenu';
 import { AddTweetForm } from "../../components/AddTweetForm";
 import PersonAddIcon from '@material-ui/icons/PersonAddOutlined';
-
+import CircularProgress from '@material-ui/core/CircularProgress';
 
 
 import ListItem from '@material-ui/core/ListItem/ListItem';
@@ -21,7 +20,7 @@ import Button from '@material-ui/core/Button/Button';
 import { useHomeStyles } from './theme';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchTweets } from '../../store/ducks/tweets/dist/actionCreators';
-import { selectTweetsItems } from "./../../store/ducks/tweets/selectors";
+import { selectIsTweetsLoading, selectTweetsItems } from "./../../store/ducks/tweets/selectors";
 
 
 //Список дел 
@@ -53,13 +52,15 @@ function Home() {
    const dispatch = useDispatch();
 
    const tweets = useSelector(selectTweetsItems);
+   const isLoading = useSelector(selectIsTweetsLoading);
+
 
 
 
 
    React.useEffect(() => {
       dispatch(fetchTweets())
-   }, []);
+   }, [dispatch]);
 
 
 
@@ -84,13 +85,13 @@ function Home() {
                      </div>
                      <div className={classes.addFormBottomLine} />
                   </Paper>
-                  {
-                     [tweets.map(tweet =>
+                  {isLoading ? <div className={classes.tweetsCentred}><CircularProgress /></div> :
+                     tweets.map(tweet =>
                         < Tweet key={tweet._id} text={tweet.text}
                            user={tweet.user}
                            classes={classes}
                         />
-                     )]
+                     )
                   }
                </Paper>
             </Grid>
