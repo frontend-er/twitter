@@ -78,22 +78,30 @@ function Home() {
             </Grid>
             <Grid item sm={8} md={6}>
                <Paper className={classes.tweetsWraper} variant="outlined" >
-                  <Paper className={classes.tweetsHeader} variant="outlined" >
-                     <Typography variant="h5" > Главная</Typography>
 
-
-                  </Paper>
                   <Paper>
-                     <div className={classes.addForm}>
-                        <AddTweetForm classes={classes} />
-                     </div>
-                     <div className={classes.addFormBottomLine} />
+                     <Paper className={classes.tweetsHeader} variant="outlined" >
+                        <Route path="/home/tweet">
+
+                           <Typography variant="h5" > Твиты </Typography>
+                        </Route >
+
+                     </Paper>
+
+
+                     <Route path={['/home', '/home/search']} exact>
+
+
+                        <div className={classes.addForm}>
+                           <AddTweetForm classes={classes} />
+                        </div>
+                        <div className={classes.addFormBottomLine} />
+                     </Route >
                   </Paper>
                   <Route path="/home" exact >
                      {isLoading ? <div className={classes.tweetsCentred}><CircularProgress /></div> :
                         tweets.map(tweet =>
-                           < Tweet key={tweet._id} text={tweet.text}
-                              user={tweet.user}
+                           <Tweet key={tweet._id} {...tweet}
                               classes={classes}
                            />
                         )
@@ -143,7 +151,7 @@ function Home() {
 
 
          </Grid >
-      </Container>
+      </Container >
 
    );
 }

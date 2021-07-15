@@ -209,4 +209,11 @@ export const useHomeStyles = makeStyles((theme: Theme) => ({
       display: 'flex',
       alignItems: 'center',
    },
+
+   tweetWrapper: {
+      color: "inherit",
+      textDecoration: "none"
+
+
+   }
 }));
