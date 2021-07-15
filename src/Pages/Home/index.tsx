@@ -78,12 +78,15 @@ function Home() {
             </Grid>
             <Grid item sm={8} md={6}>
                <Paper className={classes.tweetsWraper} variant="outlined" >
-
                   <Paper>
                      <Paper className={classes.tweetsHeader} variant="outlined" >
-                        <Route path="/home/tweet">
-
+                        <Route path={['/home', '/home/search']} exact>
                            <Typography variant="h5" > Твиты </Typography>
+
+
+                        </Route>
+                        <Route path="/home/tweet">
+                           <Typography variant="h5" > Твитнуть </Typography>
                         </Route >
 
                      </Paper>
