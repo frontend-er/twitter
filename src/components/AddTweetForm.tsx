@@ -8,6 +8,7 @@ import TextareaAutosize from '@material-ui/core/TextareaAutosize';
 import ImageOutlinedIcon from '@material-ui/icons/ImageOutlined';
 import EmojiIcon from '@material-ui/icons/SentimentSatisfiedOutlined';
 import { useHomeStyles } from "./../Pages/Home/theme";
+import { useDispatch } from "react-redux";
 
 
 interface AddTweetFormProps {
@@ -26,6 +27,11 @@ export const AddTweetForm: React.FC<AddTweetFormProps> = ({
 
    const [text, setText] = React.useState<string>('');
    const textLimitPercent = (text.length / MAX_LENGTH) * 100;
+
+
+   const dispatch = useDispatch();
+
+
 
    const onHandleChangeTextarea = (e: React.FormEvent<HTMLTextAreaElement>): void => {
       if (e.currentTarget) {
@@ -46,9 +52,11 @@ export const AddTweetForm: React.FC<AddTweetFormProps> = ({
    }
 
 
-   const handleClickAddTweet = (): void => {
-      setText('');
 
+
+   const handleClickAddTweet = () => {
+      dispatch(fetchAddTweet(text));
+      setText('')
    }
 
 
@@ -115,3 +123,7 @@ export const AddTweetForm: React.FC<AddTweetFormProps> = ({
       </div>
    );
 };
+function fetchAddTweet(text: string): any {
+   throw new Error('Function not implemented.');
+}
+
