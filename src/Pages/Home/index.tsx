@@ -21,7 +21,9 @@ import { useHomeStyles } from './theme';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchTweets } from '../../store/ducks/tweets/dist/actionCreators';
 import { selectIsTweetsLoading, selectTweetsItems } from "./../../store/ducks/tweets/selectors";
-import { fetchTags } from '../../store/tags/actionCreators';
+import BackButton from '../../components/BackButton';
+import FullTweet from "./../../components/FullTweet";
+import { fetchTags } from '../../store/ducks/tags/actionCreators';
 import { Tags } from '../../components/Tags';
 
 
@@ -80,10 +82,13 @@ function Home() {
                <Paper className={classes.tweetsWraper} variant="outlined" >
                   <Paper>
                      <Paper className={classes.tweetsHeader} variant="outlined" >
+
+                        <Route path='/home/:any' >
+                           <BackButton />
+                        </Route>
+
                         <Route path={['/home', '/home/search']} exact>
                            <Typography variant="h5" > Твиты </Typography>
-
-
                         </Route>
                         <Route path="/home/tweet">
                            <Typography variant="h5" > Твитнуть </Typography>
@@ -93,14 +98,19 @@ function Home() {
 
 
                      <Route path={['/home', '/home/search']} exact>
+                        <Paper>
 
-
-                        <div className={classes.addForm}>
-                           <AddTweetForm classes={classes} />
-                        </div>
-                        <div className={classes.addFormBottomLine} />
+                           <div className={classes.addForm}>
+                              <AddTweetForm classes={classes} />
+                           </div>
+                           <div className={classes.addFormBottomLine} />
+                        </Paper>
                      </Route >
+
                   </Paper>
+
+
+
                   <Route path="/home" exact >
                      {isLoading ? <div className={classes.tweetsCentred}><CircularProgress /></div> :
                         tweets.map(tweet =>
@@ -110,6 +120,14 @@ function Home() {
                         )
                      }
                   </Route>
+
+
+
+                  <Route path="/home/tweet/:id" component={FullTweet} exact />
+
+
+
+
                </Paper>
             </Grid>
             <Grid item sm={3} md={3}>

@@ -96,6 +96,8 @@ export const useHomeStyles = makeStyles((theme: Theme) => ({
 
    },
    tweetsHeader: {
+      display: "flex",
+      alignItems: "flex-start",
       borderLeft: 0,
       borderRight: 0,
       borderTop: 0,
@@ -105,6 +107,10 @@ export const useHomeStyles = makeStyles((theme: Theme) => ({
          fontWeight: 900
       },
 
+   },
+
+   tweetsHeaderBackButton: {
+      marginRight: 20,
    },
 
    tweetUserName: {

@@ -2,7 +2,8 @@
 import { call, put, takeLatest } from 'redux-saga/effects'
 import { setTags, setTagsLoadingState, TagsActionType } from "./actionCreators";
 import { LoadingState, Tag } from './contracts/state';
-import { TagsApi } from "./../../services/api/tagsAPI";
+import { TagsApi } from "./../../../services/api/tagsAPI";
+
 
 // worker Saga: will be fired on USER_FETCH_REQUESTED actions
 export function* fetchTagsRequest(): Generator<unknown, void, Tag[]> {

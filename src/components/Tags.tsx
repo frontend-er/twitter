@@ -4,8 +4,7 @@ import React from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { useHomeStyles } from "../Pages/Home/theme";
-import { selectIsTagsLoaded, selectTagsItems } from "../store/tags/selectors";
-
+import { selectIsTagsLoaded, selectTagsItems } from "../store/ducks/tags/selectors";
 
 
 
