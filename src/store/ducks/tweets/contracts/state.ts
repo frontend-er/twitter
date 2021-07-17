@@ -31,6 +31,6 @@ export interface Tweet {
 
 export interface TweetState {
    items: Tweet[],
-   addFormState: AddFormState,
    loadingState: LoadingState;
+   addFormState: AddFormState
 }

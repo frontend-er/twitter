@@ -15,7 +15,7 @@ export interface FetchAddTweetsActionInterface extends Action<TweetsActionType> 
 
 export interface AddTweetsActionInterface extends Action<TweetsActionType> {
    type: TweetsActionType.ADD_TWEET;
-   payload: Tweet[];
+   payload: Tweet;
 }
 
 export interface FetchTweetsActionInterface extends Action<TweetsActionType> {
@@ -27,6 +27,10 @@ export interface SetTweetsLoadingStateActionInterface extends Action<TweetsActio
    payload: LoadingState;
 
 }
+
+
+
+
 
 export interface SetAddFormStateActionInterface extends Action<TweetsActionType> {
    type: TweetsActionType.SET_ADD_FORM_STATE;

@@ -14,7 +14,7 @@ export function* fetchTweetsRequest(): Generator<unknown, void, Tweet[]> {
    }
 }
 
-export function* fetchAddTweetRequest({ payload }: FetchAddTweetsActionInterface): Generator<unknown, void, Tweet[]> {
+export function* fetchAddTweetRequest({ payload }: FetchAddTweetsActionInterface): Generator<unknown, void, Tweet> {
    try {
       const data: Tweet = {
          _id: Math.random().toString(36).substr(2),
