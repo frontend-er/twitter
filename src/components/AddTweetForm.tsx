@@ -9,6 +9,7 @@ import ImageOutlinedIcon from '@material-ui/icons/ImageOutlined';
 import EmojiIcon from '@material-ui/icons/SentimentSatisfiedOutlined';
 import { useHomeStyles } from "./../Pages/Home/theme";
 import { useDispatch } from "react-redux";
+import { fetchAddTweets } from '../store/ducks/tweets/actionCreators';
 
 
 interface AddTweetFormProps {
@@ -27,7 +28,7 @@ export const AddTweetForm: React.FC<AddTweetFormProps> = ({
 
    const [text, setText] = React.useState<string>('');
    const textLimitPercent = (text.length / MAX_LENGTH) * 100;
-
+   console.log(text);
 
    const dispatch = useDispatch();
 
@@ -55,7 +56,7 @@ export const AddTweetForm: React.FC<AddTweetFormProps> = ({
 
 
    const handleClickAddTweet = () => {
-      dispatch(fetchAddTweet(text));
+      dispatch(fetchAddTweets(text));
       setText('')
    }
 
@@ -94,7 +95,7 @@ export const AddTweetForm: React.FC<AddTweetFormProps> = ({
                      <div className={classes.addFormCircleProgress}>
 
                         <CircularProgress
-                           variant="static"
+                           variant="determinate"
                            size={20}
                            thickness={5}
                            value={textLimitPercent}
@@ -102,7 +103,7 @@ export const AddTweetForm: React.FC<AddTweetFormProps> = ({
                         />
                         <CircularProgress
                            style={{ color: 'rgba(0, 0, 0, 0.1)' }}
-                           variant="static"
+                           variant="determinate"
                            size={20}
                            thickness={5}
                            value={100}
@@ -123,7 +124,5 @@ export const AddTweetForm: React.FC<AddTweetFormProps> = ({
       </div>
    );
 };
-function fetchAddTweet(text: string): any {
-   throw new Error('Function not implemented.');
-}
+
 

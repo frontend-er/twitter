@@ -7,138 +7,68 @@
       "user": {
         "fullname": "Test User",
         "username": "test",
-        "avatarUrl": "https://source.unsplash.com/random/100x100?5"
+        "avatarUrl": "https://sun9-29.userapi.com/impg/c854528/v854528533/2508be/Y5A0kBFbZS4.jpg?size=750x752&quality=96&sign=9d2e218b948349d2898fd071faf19c29&type=album"
       }
     },
     {
-      "_id": "gafivm4k41m",
-      "text": "Тестовый твит",
+      "_id": "hg3kp9ppu3r",
+      "text": "wefwef",
       "user": {
-        "fullname": "Test User",
-        "username": "test",
-        "avatarUrl": "https://source.unsplash.com/random/100x100?5"
+        "fullName": "Brian Vaughn 🖤",
+        "userName": "brian_d_vaughn",
+        "avatarUrl": "https://pbs.twimg.com/profile_images/1290320630521487362/UKVSbU2V_bigger.jpg"
       },
       "id": 2
     },
     {
-      "_id": "4d5sq8wbidu",
-      "text": "тест",
+      "_id": "foc5t6lpuho",
+      "text": "qwdqwd",
       "user": {
-        "fullname": "Test User",
-        "username": "test",
-        "avatarUrl": "https://source.unsplash.com/random/100x100?5"
+        "fullName": "Brian Vaughn 🖤",
+        "userName": "brian_d_vaughn",
+        "avatarUrl": "https://pbs.twimg.com/profile_images/1290320630521487362/UKVSbU2V_bigger.jpg"
       },
       "id": 3
     },
     {
-      "_id": "m5c71euviwj",
-      "text": "ttt",
+      "_id": "427mepgv2o4",
+      "text": "wefwef",
       "user": {
-        "fullname": "Test User",
-        "username": "test",
-        "avatarUrl": "https://source.unsplash.com/random/100x100?5"
+        "fullName": "Brian Vaughn 🖤",
+        "userName": "brian_d_vaughn",
+        "avatarUrl": "https://pbs.twimg.com/profile_images/1290320630521487362/UKVSbU2V_bigger.jpg"
       },
       "id": 4
     },
     {
-      "_id": "oitx2o167i",
-      "text": "твит",
+      "_id": "pogvbwxn4u",
+      "text": "qdwdqwd",
       "user": {
-        "fullname": "Test User",
-        "username": "test",
-        "avatarUrl": "https://source.unsplash.com/random/100x100?5"
+        "fullName": "Brian Vaughn 🖤",
+        "userName": "brian_d_vaughn",
+        "avatarUrl": "https://pbs.twimg.com/profile_images/1290320630521487362/UKVSbU2V_bigger.jpg"
       },
       "id": 5
     },
     {
-      "_id": "pdzohox6lu",
-      "text": "это тестовый твит",
+      "_id": "uzlqyi3ztfe",
+      "text": "wefwefwefwe",
       "user": {
-        "fullname": "Test User",
-        "username": "test",
-        "avatarUrl": "https://source.unsplash.com/random/100x100?5"
+        "fullName": "Brian Vaughn 🖤",
+        "userName": "brian_d_vaughn",
+        "avatarUrl": "https://pbs.twimg.com/profile_images/1290320630521487362/UKVSbU2V_bigger.jpg"
       },
       "id": 6
     },
     {
-      "_id": "zbrobf41w9d",
-      "text": "qweqweqweqwe",
+      "_id": "hxidcf2senc",
+      "text": "тестовый твит",
       "user": {
-        "fullname": "Test User",
-        "username": "test",
-        "avatarUrl": "https://source.unsplash.com/random/100x100?5"
+        "fullName": "Brian Vaughn 🖤",
+        "userName": "brian_d_vaughn",
+        "avatarUrl": "https://pbs.twimg.com/profile_images/1290320630521487362/UKVSbU2V_bigger.jpg"
       },
       "id": 7
-    },
-    {
-      "_id": "rui03w1me6",
-      "text": "test",
-      "user": {
-        "fullname": "Test User",
-        "username": "test",
-        "avatarUrl": "https://source.unsplash.com/random/100x100?5"
-      },
-      "id": 8
-    },
-    {
-      "_id": "x5f5j0gvihn",
-      "text": "qweqweqweqweqweqweqweqwe",
-      "user": {
-        "fullname": "Test User",
-        "username": "test",
-        "avatarUrl": "https://source.unsplash.com/random/100x100?5"
-      },
-      "id": 9
-    },
-    {
-      "_id": "a7xog2wmmvj",
-      "text": "I just spent the morning helping my parents unload another 20-ft moving truck. Then I went running. I think I'm as physically tired now as I can remember being",
-      "user": {
-        "fullname": "Brian Vaughn 🖤",
-        "username": "brian_d_vaughn",
-        "avatarUrl": "https://pbs.twimg.com/profile_images/1290320630521487362/UKVSbU2V_bigger.jpg"
-      },
-      "id": 10
-    },
-    {
-      "_id": "f9412q3a018",
-      "text": "qweqwe",
-      "user": {
-        "fullname": "Brian Vaughn 🖤",
-        "username": "brian_d_vaughn",
-        "avatarUrl": "https://pbs.twimg.com/profile_images/1290320630521487362/UKVSbU2V_bigger.jpg"
-      },
-      "id": 11
-    },
-    {
-      "_id": "2unnwxc6k1i",
-      "text": "After twelve hours on a website, the next link click will be a full page reload to get new code:\n\nhttps://gist.github.com/2c50e77768e3f88b1c7251ef95ed01d3\n\nGreat idea \n@JoshWComeau\n! React Router already has a prop for this, just gotta update it after however many hours you want",
-      "user": {
-        "fullname": "Brian Vaughn 🖤",
-        "username": "brian_d_vaughn",
-        "avatarUrl": "https://pbs.twimg.com/profile_images/1290320630521487362/UKVSbU2V_bigger.jpg"
-      },
-      "id": 12
-    },
-    {
-      "_id": "njzafu48hj",
-      "text": "Тестовый твит",
-      "user": {
-        "fullname": "Brian Vaughn 🖤",
-        "username": "brian_d_vaughn",
-        "avatarUrl": "https://pbs.twimg.com/profile_images/1290320630521487362/UKVSbU2V_bigger.jpg"
-      },
-      "id": 14
-    },
-    {
-      "_id": "3im9o4e9h72",
-      "text": "первый твит",
-      "user": {
-        "fullname": "Brian Vaughn 🖤",
-        "username": "brian_d_vaughn",
-        "avatarUrl": "https://pbs.twimg.com/profile_images/1290320630521487362/UKVSbU2V_bigger.jpg"
-      },
-      "id": 15
     }
   ],
   "tags": [
@@ -149,17 +79,17 @@
     },
     {
       "_id": "5f625ff206bc4fda21e7bf710",
-      "name": "Навального",
+      "name": "#Навального",
       "count": 442
     },
     {
       "_id": "5f625ff406bc45f2da1e7bf710",
-      "name": "гитлер",
+      "name": "#Dodon",
       "count": 51321
     },
     {
       "_id": "5f625f1f606b1c4fda1e7bf710",
-      "name": "Беларусь",
+      "name": "#Chisinau",
       "count": 812812
     }
   ],
