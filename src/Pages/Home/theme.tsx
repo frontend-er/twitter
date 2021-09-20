@@ -119,7 +119,7 @@ export const useHomeStyles = makeStyles((theme: Theme) => ({
       marginRight: 20,
    },
 
-   tweetUserName: {
+   tweetUsername: {
       color: grey[500],
    },
 

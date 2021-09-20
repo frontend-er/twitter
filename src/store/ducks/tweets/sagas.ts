@@ -21,7 +21,7 @@ export function* fetchAddTweetRequest({ payload }: FetchAddTweetsActionInterface
          text: payload,
          user: {
             fullName: 'Brian Vaughn 🖤',
-            userName: 'brian_d_vaughn',
+            username: 'brian_d_vaughn',
             avatarUrl: 'https://pbs.twimg.com/profile_images/1290320630521487362/UKVSbU2V_bigger.jpg',
          },
       };

@@ -19,7 +19,7 @@ interface TweetProps {
    _id: string;
    user: {
       fullName: string;
-      userName: string;
+      username: string;
       avatarUrl: string;
 
    };
@@ -41,9 +41,9 @@ export const Tweet: React.FC<TweetProps> = ({ _id, text, user, classes }: TweetP
             <div>
                <Typography>
                   <b>{user.fullName}</b>&nbsp;
-                  <span className={classes.tweetUserName}>@{user.userName}</span>&nbsp;
-                  <span className={classes.tweetUserName}>·</span>&nbsp;
-                  <span className={classes.tweetUserName}>1 ч</span>
+                  <span className={classes.tweetUsername}>@{user.username}</span>&nbsp;
+                  <span className={classes.tweetUsername}>·</span>&nbsp;
+                  <span className={classes.tweetUsername}>1 ч</span>
                </Typography>
                <Typography variant="body1" gutterBottom>
                   {text}
